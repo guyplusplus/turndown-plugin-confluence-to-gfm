@@ -1,10 +1,10 @@
 # turndown-plugin-confluence-to-gfm
 
-The main project is based on [Dom Christie](https://github.com/domchristie) [turndown tool](https://github.com/domchristie/turndown-plugin-gfm).
+The main project is based on [Dom Christie](https://github.com/domchristie) [turndown tool](https://github.com/domchristie/turndown-plugin-gfm) which can convert HTML content to standard MD (Markdown) or GFM (Github Flavored Markdown).
 
-This small plugin converts few non standard features of Confluence HTML content to GFM, namely:
+This small plugin converts few non-standard features of Confluence HTML content to GFM, namely:
 * Code block
-* tasks list
+* Tasks list
 * Smileys
 * Improved support of tables
 
