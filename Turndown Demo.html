@@ -127,7 +127,7 @@
   <div class="col">
     <label for="input">HTML</label>
     <textarea cols="100" rows="10" id="input">
-    
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -155,7 +155,7 @@
         <div id="content" class="view">
           <div class="page-metadata">
             Created by
-            <span class="author">John Blow</span>
+            <span class="author">Guyplusplus</span>
             , last modified on Apr 15, 2021
           </div>
           <div id="main-content" class="wiki-content group">
@@ -168,10 +168,6 @@
               and also
               <em>
                 <strong>boldItalic</strong>
-              </em>
-              and
-              <em>
-                <strong>italicBold</strong>
               </em>
               .
             </p>
@@ -206,11 +202,12 @@
                 <span class="placeholder-inline-tasks">
                   Action 2
                   <strong>done</strong>
+                  for good
                 </span>
               </li>
             </ul>
             <h2 id="ThisisTestPage-TableHeading2">Table Heading 2</h2>
-            <p>This first table is ignored as it has no header.</p>
+            <p>This first table is ignored (exported as HTML as-is) as it has no header.</p>
             <div class="table-wrap">
               <table data-layout="default" class="confluenceTable">
                 <colgroup>
@@ -262,6 +259,7 @@
               </table>
             </div>
             <p />
+            <p>Next is standard 3x2 table with column headers.</p>
             <div class="table-wrap">
               <table data-layout="default" class="confluenceTable">
                 <colgroup>
@@ -286,12 +284,18 @@
                       <p>2-1</p>
                     </td>
                     <td class="confluenceTd">
-                      <p>2-2</p>
+                      <p>
+                        2-2 with
+                        <strong>bold</strong>
+                      </p>
                     </td>
                   </tr>
                   <tr>
                     <td class="confluenceTd">
-                      <p>3-1</p>
+                      <p>
+                        3-1 with
+                        <em>italic</em>
+                      </p>
                     </td>
                     <td class="confluenceTd">
                       <p>3-2</p>
@@ -300,34 +304,45 @@
                 </tbody>
               </table>
             </div>
+            <p />
+            <p>Next is standard 3x4 table with column headers and auto-numbers on first column.</p>
             <div class="table-wrap">
               <table data-layout="default" class="confluenceTable">
                 <colgroup>
                   <col />
-                  <col style="width: 340.0px;" />
-                  <col style="width: 340.0px;" />
+                  <col style="width: 289.0px;" />
+                  <col style="width: 289.0px;" />
+                  <col style="width: 140.0px;" />
                 </colgroup>
                 <tbody>
                   <tr>
                     <th class="numberingColumn confluenceTh" />
                     <th class="confluenceTh">
                       <p>
-                        <strong>h1</strong>
+                        <strong>h1 on left</strong>
                       </p>
                     </th>
                     <th class="confluenceTh">
-                      <p>
-                        <strong>h2</strong>
+                      <p style="text-align: center;">
+                        <strong>h2 on mid</strong>
+                      </p>
+                    </th>
+                    <th class="confluenceTh">
+                      <p style="text-align: right;">
+                        <strong>h3 on right</strong>
                       </p>
                     </th>
                   </tr>
                   <tr>
                     <td class="numberingColumn confluenceTd">1</td>
                     <td class="confluenceTd">
-                      <p>2-1</p>
+                      <p>2-1. I have to write a bit of text to make it long.</p>
                     </td>
                     <td class="confluenceTd">
-                      <p>2-2</p>
+                      <p>2-2. I have to write a bit of text to make it long.</p>
+                    </td>
+                    <td class="confluenceTd">
+                      <p>2-3</p>
                     </td>
                   </tr>
                   <tr>
@@ -337,6 +352,69 @@
                     </td>
                     <td class="confluenceTd">
                       <p>3-2</p>
+                    </td>
+                    <td class="confluenceTd">
+                      <p>3-3. I have to write a bit of text to make it long.</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p />
+            <p>Next is standard 3x4 table with column headers, row headers and auto-numbers on first column.</p>
+            <div class="table-wrap">
+              <table data-layout="default" class="confluenceTable">
+                <colgroup>
+                  <col />
+                  <col style="width: 226.67px;" />
+                  <col style="width: 226.67px;" />
+                  <col style="width: 226.67px;" />
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th class="numberingColumn confluenceTh" />
+                    <th class="confluenceTh">
+                      <p>
+                        <strong>h1l1</strong>
+                      </p>
+                    </th>
+                    <th class="confluenceTh">
+                      <p>
+                        <strong>h2</strong>
+                      </p>
+                    </th>
+                    <th class="confluenceTh">
+                      <p>
+                        <strong>h3</strong>
+                      </p>
+                    </th>
+                  </tr>
+                  <tr>
+                    <td class="numberingColumn confluenceTd">1</td>
+                    <th class="confluenceTh">
+                      <p>
+                        <strong>l2</strong>
+                      </p>
+                    </th>
+                    <td class="confluenceTd">
+                      <p>2-2</p>
+                    </td>
+                    <td class="confluenceTd">
+                      <p>2-3</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="numberingColumn confluenceTd">2</td>
+                    <th class="confluenceTh">
+                      <p>
+                        <strong>l3</strong>
+                      </p>
+                    </th>
+                    <td class="confluenceTd">
+                      <p>3-2</p>
+                    </td>
+                    <td class="confluenceTd">
+                      <p>3-3</p>
                     </td>
                   </tr>
                 </tbody>
@@ -436,14 +514,13 @@
             </ol>
             <h2 id="ThisisTestPage-CodeSample">Code Sample</h2>
             <p>In JAVA</p>
-            <p />
             <div class="code panel pdl" style="border-width: 1px;">
               <div class="codeContent panelContent pdl">
                 <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">System.out.println("Hello World");</pre>
               </div>
             </div>
-            <p>In XML</p>
             <p />
+            <p>In XML</p>
             <div class="code panel pdl" style="border-width: 1px;">
               <div class="codeContent panelContent pdl">
                 <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: xml; gutter: false; theme: Confluence" data-theme="Confluence">&lt;root&gt;
@@ -451,8 +528,8 @@
 &lt;/root&gt;</pre>
               </div>
             </div>
-            <p>And in JSON</p>
             <p />
+            <p>And in JSON</p>
             <div class="code panel pdl" style="border-width: 1px;">
               <div class="codeContent panelContent pdl">
                 <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
@@ -461,10 +538,11 @@
 }</pre>
               </div>
             </div>
+            <p />
             <p>
               And a date:
               <time datetime="2021-04-15" class="date-upcoming">15 Apr 2021</time>
-              followed by a basic quote
+              followed by a basic quote followed by a separator.
             </p>
             <blockquote>
               <p>“to be or not to be, I don’t know”</p>
@@ -480,7 +558,7 @@
       </div>
       <div id="footer" role="contentinfo">
         <section class="footer-body">
-          <p>Document generated by Confluence on Apr 15, 2021 11:45</p>
+          <p>Document generated by Confluence on Apr 15, 2021 17:12</p>
           <div id="footer-logo">
             <a href="http://www.atlassian.com/">Atlassian</a>
           </div>
