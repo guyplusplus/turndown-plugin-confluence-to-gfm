@@ -8,4 +8,4 @@ This small plugin converts few non standard features of Confluence HTML content 
 * Smileys
 * Improved support of tables
 
-First step, export one or more pages of the space as HTML, open the HTML and paste the content in the [Turndown Demo page](./Turndown Demo.html).
+First step, clone this repository. Then export one or more pages of the space as HTML, open the HTML and paste the content in the Turndown Demo page (Turndown%20Demo.html) to be opened locally.
