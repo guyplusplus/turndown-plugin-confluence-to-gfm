@@ -113,6 +113,7 @@ function cell (content, node) {
   if (index === 0) prefix = '| ';
   // Ensure single line per cell
   content = content.replace(/\n/g, ' ');
+  // | must be escaped as \|
   content = content.replace(/\|/g, '\\\|');
   return prefix + content + ' |'
 }
