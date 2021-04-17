@@ -12,6 +12,7 @@ First step, clone this repository and open the Turndown Demo page (Turndown%20De
 
 ## Project TODO List
 
-- [ ] Some improvement in code fencing
+- [ ] Some improvement in code fencing for possibly more than 3 \`
 - [ ] Support of indented code (currently only fencing block code supported)
-- [ ] Table headers supported with left / medium / right indentation
+- [X] Table headers supported with left / medium / right indentation. Conclusion: no support since Confluence handles headers indentation via paragraph attribute inside the header cell
+- [X] More test data with a richer Confluence page content, including with some characters (i.e. |)
