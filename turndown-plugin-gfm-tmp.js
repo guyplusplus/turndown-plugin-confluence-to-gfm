@@ -91,29 +91,19 @@ rules.tableSection = {
   }
 };
 
-// A tr is a heading row if:
-// - the parent is a THEAD, assumed syntax with TH is correct
-// - or if its the first child of the TABLE or the first TBODY
-//   and every cell is a TH
+// Check that the parent or parent parent (in case of THEAD, TBODY or TFOOT) is a TABLE
+// and it is matching the first row
+// and every cell is a TH
 function isHeadingRow (tr) {
-  var parentNode = tr.parentNode;
-  if(parentNode.nodeName === 'THEAD')
-    return true
-  if(parentNode.nodeName === 'TFOOT')
-    return false
-  if(parentNode.nodeName === 'TBODY') {
-    var parentParentNode = parentNode.parentNode;
-    if(parentParentNode.nodeName !== 'TABLE')
+  var tableNode = tr.parentNode;
+  if(tableNode.nodeName === 'THEAD' ||
+     tableNode.nodeName === 'TFOOT' ||
+     tableNode.nodeName === 'TBODY')
+    tableNode = tableNode.parentNode;
+  if(tableNode.nodeName !== 'TABLE')
       return false;
-    if(parentParentNode.rows[0] !== tr)
+  if(tableNode.rows[0] !== tr)
       return false;
-    return every.call(tr.childNodes, function (n) { return n.nodeName === 'TH' })
-  }
-  //no THEAD, TBODY nor TFOOT
-  if(parentNode.nodeName !== 'TABLE')
-    return false;
-  if(parentNode.rows[0] !== tr)
-    return false;
   return every.call(tr.childNodes, function (n) { return n.nodeName === 'TH' })
 }
 
@@ -123,6 +113,7 @@ function cell (content, node) {
   if (index === 0) prefix = '| ';
   // Ensure single line per cell
   content = content.replace(/\n/g, ' ');
+  content = content.replace(/\|/g, '\\\|');
   return prefix + content + ' |'
 }
 
