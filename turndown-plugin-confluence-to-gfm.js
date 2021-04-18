@@ -1,12 +1,12 @@
 var turndownPluginConfluence = (function (exports) {
 'use strict';
 
-var highlightRegExp = /brush: ([a-z0-9]+);/;
+var highlightRegExp = /brush: ([a-z0-9]+);/
 
 function confluenceHighlightedCodeBlock (turndownService) {
   turndownService.addRule('highlightedConfluenceCodeBlock', {
     filter: function (node) {
-      var firstChild = node.firstChild;
+      var firstChild = node.firstChild
       return (
         node.nodeName === 'DIV' &&
         firstChild &&
@@ -15,17 +15,17 @@ function confluenceHighlightedCodeBlock (turndownService) {
       )
     },
     replacement: function (content, node, options) {
-      var dataSyntaxhighlighterParams = node.firstChild.getAttribute('data-syntaxhighlighter-params') || '';
-      var language = (dataSyntaxhighlighterParams.match(highlightRegExp) || [null, ''])[1];
+      var dataSyntaxhighlighterParams = node.firstChild.getAttribute('data-syntaxhighlighter-params') || ''
+      var language = (dataSyntaxhighlighterParams.match(highlightRegExp) || [null, ''])[1]
 
-      //@TODO: implement fenceInCodeRegex
+      // @TODO: implement fenceInCodeRegex
       return (
         '\n\n' + options.fence + language + '\n' +
         node.firstChild.textContent +
         '\n' + options.fence + '\n\n'
       )
     }
-  });
+  })
 }
 
 function confluenceTaskListItems (turndownService) {
@@ -40,19 +40,19 @@ function confluenceTaskListItems (turndownService) {
     replacement: function (content, node) {
       return (node.className === 'checked' ? '- [x]' : '- [ ]') + ' ' + content + '\n\n'
     }
-  });
+  })
 }
 
 function confluenceSmiley (turndownService) {
   turndownService.addRule('confluenceSmiley', {
     filter: function (node) {
-      var className = node.className || '';
+      var className = node.className || ''
       return className.includes('emoticon') && node.nodeName === 'IMG'
     },
     replacement: function (content, node) {
       return (node.getAttribute('data-emoji-shortname') || '')
     }
-  });
+  })
 }
 
 function confluenceGfm (turndownService) {
@@ -60,7 +60,7 @@ function confluenceGfm (turndownService) {
     confluenceHighlightedCodeBlock,
     confluenceTaskListItems,
     confluenceSmiley
-  ]);
+  ])
 }
 
 exports.confluenceGfm = confluenceGfm;
