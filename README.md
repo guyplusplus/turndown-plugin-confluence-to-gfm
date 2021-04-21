@@ -16,6 +16,7 @@ There is a [pull request](https://github.com/domchristie/turndown-plugin-gfm/pul
 
 ## Project TODO List
 
+- [ ] Turn this project as a npm package with proper test cases!
 - [ ] Some improvement in code fencing for possibly more than 3 \`
 - [ ] Support of indented code (currently only fencing block code supported)
 - [X] Table headers supported with left / medium / right indentation. Conclusion: no support since Confluence handles headers indentation via paragraph attribute inside the header cell
