@@ -10,6 +10,10 @@ This small plugin converts few non-standard features of Confluence HTML content 
 
 First step, clone this repository and open the Turndown Demo page (Turndown%20Demo.html). Then export one or more pages of the Atlassian space as HTML, open the HTML and paste the content in Demo page.
 
+## turndown-plugin-gfm bug fixes
+
+There is a [pull request](https://github.com/domchristie/turndown-plugin-gfm/pull/31) that includes mandatory fixes. Until then the file `turndown-plugin-gfm-tmp.js` contains the fixes.
+
 ## Project TODO List
 
 - [ ] Some improvement in code fencing for possibly more than 3 \`
