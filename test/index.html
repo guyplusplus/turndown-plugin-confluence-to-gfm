@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>turndown test runner</title>
+  <link rel="stylesheet" href="../node_modules/turndown-attendant/dist/styles.css">
+</head>
+<body>
+
+<!-- TEST CASES -->
+
+<div class="case" data-name="basic table (gfm module in place)">
+  <div class="input">
+    <table>
+      <thead>
+        <tr>
+          <th>Heading</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Content</td>
+        </tr>
+    </table>
+  </div>
+  <pre class="expected">| Heading |
+| --- |
+| Content |</pre>
+</div>
+
+<!-- /TEST CASES -->
+
+<script src="turndown-plugin-gfm-test.browser.js"></script>
+</body>
+</html>

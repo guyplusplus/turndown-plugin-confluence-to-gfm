@@ -1,6 +1,6 @@
 # turndown-plugin-confluence-to-gfm
 
-The main project is based on [Dom Christie](https://github.com/domchristie) [turndown tool](https://github.com/domchristie/turndown) and its [GFM extension](https://github.com/domchristie/turndown-plugin-gfm) which converts HTML content to standard MD (Markdown) or GFM (Github Flavored Markdown).
+A [Turndown](https://github.com/domchristie/turndown) plugin which adds GitHub Flavored Markdown extensions for Confluence pages. It relies on the [turndown-plugin-gfm](https://github.com/guyplusplus/turndown-plugin-gfm) plugin.
 
 This small plugin converts few non-standard features of Confluence HTML content to GFM, namely:
 * Code block
@@ -8,16 +8,55 @@ This small plugin converts few non-standard features of Confluence HTML content 
 * Smileys
 * Improved support of tables
 
-First step, clone this repository and open the Turndown Demo page (Turndown%20Demo.html). Then export one or more pages of the Atlassian space as HTML, open the HTML and paste the content in Demo page.
+## Test Page
 
-## turndown-plugin-gfm bug fixes
+The test page can be found [here](https://guyplusplus.github.io/turndown-plugin-confluence-to-gfm/).
 
-There is a [pull request](https://github.com/domchristie/turndown-plugin-gfm/pull/31) that includes mandatory fixes. Until then the file `turndown-plugin-gfm-tmp.js` contains the fixes.
+## Installation
 
-## Project TODO List
+npm:
 
-- [ ] Turn this project as a npm package with proper test cases!
-- [ ] Some improvement in code fencing for possibly more than 3 \`
-- [ ] Support of indented code (currently only fencing block code supported)
-- [X] Table headers supported with left / medium / right indentation. Conclusion: no support since Confluence handles headers indentation via paragraph attribute inside the header cell
-- [X] More test data with a richer Confluence page content, including with some characters (i.e. |)
+```
+npm install turndown-plugin-confluence-to-gfm
+```
+
+Browser:
+
+```html
+<script src="https://unpkg.com/turndown/dist/turndown.js"></script>
+<script src="https://unpkg.com/@guyplusplus/turndown-plugin-gfm/dist/turndown-plugin-gfm.js"></script>
+<script src="https://unpkg.com/turndown-plugin-confluence-to-gfm/dist/turndown-plugin-confluence-to-gfm.js"></script>
+```
+
+## Usage
+
+```js
+// For Node.js
+var TurndownService = require('turndown')
+var TurndownPluginGfm = require('@guyplusplus/turndown-plugin-gfm')
+var TurndownPluginConfluence = require('@guyplusplus/turndown-plugin-confluence-to-gfm')
+
+var turndownService = new TurndownService()
+TurndownPluginGfm.gfm(turndownService)
+TurndownPluginConfluence.confluenceGfm(turndownService)
+var markdown = turndownService.turndown('<strike>Hello world!</strike>')
+```
+
+turndown-plugin-gfm is a suite of plugins which can be applied individually. The available plugins are as follows:
+
+- `strikethrough` (for converting `<strike>`, `<s>`, and `<del>` elements)
+- `tables`
+- `taskListItems`
+- `gfm` (which applies all of the above)
+
+So for example, if you only wish to convert tables:
+
+```js
+var tables = require('turndown-plugin-gfm').tables
+var turndownService = new TurndownService()
+turndownService.use(tables)
+```
+
+## License
+
+turndown-plugin-gfm is copyright © 2017+ Dom Christie and released under the MIT license.

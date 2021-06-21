@@ -1,0 +1,48 @@
+{
+  "name": "turndown-plugin-confluence-to-gfm",
+  "description": "Turndown plugin to convert Confluence HTML pages to GitHub Flavored Markdown extensions.",
+  "version": "0.9.0",
+  "author": "Guy Deffaux",
+  "main": "lib/turndown-plugin-confluence-to-gfm.cjs.js",
+  "module": "lib/turndown-plugin-confluence-to-gfm.es.js",
+  "jsnext:main": "lib/turndown-plugin-confluence-to-gfm.es.js",
+  "devDependencies": {
+    "browserify": "^16.2.3",
+    "rollup": "^1.32.0",
+    "standard": "^10.0.3",
+    "turndown": "^7.0.0",
+    "turndown-attendant": "0.0.3"
+  },
+  "dependencies": {
+    "@guyplusplus/turndown-plugin-gfm": "^1.0.5"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "keywords": [
+    "turndown",
+    "turndown-plugin",
+    "turndown-plugin-gfm",
+    "html-to-markdown",
+    "html",
+    "markdown",
+    "github-flavored-markdown",
+    "gfm",
+    "confluence"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guyplusplus/turndown-plugin-confluence-to-gfm.git"
+  },
+  "scripts": {
+    "build": "npm run build-cjs && npm run build-es && npm run build-iife && npm run build-test",
+    "build-cjs": "rollup -c config/rollup.config.cjs.js && rollup -c config/rollup.config.browser.cjs.js",
+    "build-es": "rollup -c config/rollup.config.es.js && rollup -c config/rollup.config.browser.es.js",
+    "build-iife": "rollup -c config/rollup.config.iife.js",
+    "build-test": "browserify test/turndown-plugin-confluence-to-gfm-test.js --outfile test/turndown-plugin-confluence-to-gfm-test.browser.js",
+    "prepare": "npm run build",
+    "test": "npm run build && standard ./src/**/*.js && node test/turndown-plugin-confluence-to-gfm-test.js"
+  }
+}
