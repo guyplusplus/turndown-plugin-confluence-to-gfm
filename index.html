@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Turndown Plugin GFM Demo</title>
+<title>Turndown Plugin Confluence to GFM Demo</title>
 <meta name="viewport" content="width=device-width">
 <style>
   * {
@@ -111,23 +111,25 @@
 </style>
 <script src="https://unpkg.com/turndown/dist/turndown.js"></script>
 <script src="https://unpkg.com/@guyplusplus/turndown-plugin-gfm/dist/turndown-plugin-gfm.js"></script>
+<script src="https://unpkg.com/turndown-plugin-confluence-to-gfm/dist/turndown-plugin-confluence-to-gfm.js"></script>
 </head>
 <body>
 <header>
-  <h1>Turndown Plugin GFM Demo</h1>
-  <a class="source-link" href="https://github.com/guyplusplus/turndown-plugin-gfm">Source on GitHub</a>
+  <h1>Turndown Plugin Confluence to GFM Demo</h1>
+  <a class="source-link" href="https://github.com/guyplusplus/turndown-plugin-confluence-to-gfm">Source on GitHub</a>
 </header>
 <div class="row">
   <div class="col">
     <label for="input">HTML</label>
-    <textarea cols="100" rows=10 id="input"><h1>Turndown Plugin GFM Demo</h1>
+    <textarea cols="100" rows=10 id="input"><h1>Turndown Plugin Confluence to GFM Demo</h1>
 
-<p>This demonstrates <a href="https://github.com/domchristie/turndown">turndown</a> – an HTML to Markdown converter in JavaScript with additional support for GFM via the <a href="https://github.com/guyplusplus/turndown-plugin-gfm">turndown-plugin-gfm</a> plugin.</p>
+<p>This demonstrates <a href="https://github.com/domchristie/turndown">turndown</a> – an HTML to Markdown converter in JavaScript with additional support for Confluence GFM via the <a href="https://github.com/guyplusplus/turndown-plugin-confluence-to-gfm">turndown-plugin-confluence-to-gfm</a> plugin.</p>
 
 <h2>Usage</h2>
 
 <pre><code class="language-js">var turndownService = new TurndownService()
 TurndownPluginGfmService.gfm(turndownService)
+TurndownPluginConfluenceToGfmService.confluenceGfm(turndownService)
 console.log(
   turndownService.turndown('&amp;lt;h1&amp;gt;Hello world&amp;lt;/h1&amp;gt;')
 )</code></pre>
@@ -242,6 +244,7 @@ console.log(
     var optionsForm = document.getElementById('options')
     var turndownService = new window.TurndownService(options())
     TurndownPluginGfmService.gfm(turndownService)
+    TurndownPluginConfluenceToGfmService.confluenceGfm(turndownService)
 
     input.addEventListener('input', update)
 
