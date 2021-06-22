@@ -1,12 +1,11 @@
 # turndown-plugin-confluence-to-gfm
 
-A [Turndown](https://github.com/domchristie/turndown) plugin which adds GitHub Flavored Markdown extensions for Confluence pages. It relies on the [turndown-plugin-gfm](https://github.com/guyplusplus/turndown-plugin-gfm) plugin.
+A [Turndown](https://github.com/domchristie/turndown) plugin which adds GitHub Flavored Markdown extensions for Confluence pages exported as HTML. It relies on the [turndown-plugin-gfm](https://github.com/guyplusplus/turndown-plugin-gfm) plugin.
 
 This small plugin converts few non-standard features of Confluence HTML content to GFM, namely:
 * Code block
 * Tasks list
 * Smileys
-* Improved support of tables
 
 ## Test Page
 
@@ -39,24 +38,24 @@ var TurndownPluginConfluence = require('@guyplusplus/turndown-plugin-confluence-
 var turndownService = new TurndownService()
 TurndownPluginGfm.gfm(turndownService)
 TurndownPluginConfluence.confluenceGfm(turndownService)
-var markdown = turndownService.turndown('<strike>Hello world!</strike>')
+var markdown = turndownService.turndown('<img class="emoticon emoticon-laugh" data-emoji-id="1f600" data-emoji-shortname=":grinning:" data-emoji-fallback="😀" src="images/icons/emoticons/biggrin.png" width="16" height="16" data-emoticon-name="laugh" alt="(big grin)"/>')
 ```
 
-turndown-plugin-gfm is a suite of plugins which can be applied individually. The available plugins are as follows:
+turndown-plugin-confluence-to-gfm is a suite of plugins which can be applied individually. The available plugins are as follows:
 
-- `strikethrough` (for converting `<strike>`, `<s>`, and `<del>` elements)
-- `tables`
-- `taskListItems`
-- `gfm` (which applies all of the above)
+- `confluenceHighlightedCodeBlock`
+- `confluenceSmiley`
+- `confluenceTaskListItems`
+- `confluenceGfm` (which applies all of the above)
 
 So for example, if you only wish to convert tables:
 
 ```js
-var tables = require('turndown-plugin-gfm').tables
+var confluenceSmiley = require('turndown-plugin-confluence-to-gfm').confluenceSmiley
 var turndownService = new TurndownService()
-turndownService.use(tables)
+turndownService.use(confluenceSmiley)
 ```
 
 ## License
 
-turndown-plugin-gfm is copyright © 2017+ Dom Christie and released under the MIT license.
+turndown-plugin-confluence-to-gfm is copyright © 2021+ Guyplusplus and released under the MIT license.
