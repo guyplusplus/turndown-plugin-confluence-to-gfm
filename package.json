@@ -1,7 +1,7 @@
 {
   "name": "turndown-plugin-confluence-to-gfm",
   "description": "Turndown plugin to convert Confluence HTML pages to GitHub Flavored Markdown extensions.",
-  "version": "0.9.0",
+  "version": "0.1.0",
   "author": "Guy Deffaux",
   "main": "lib/turndown-plugin-confluence-to-gfm.cjs.js",
   "module": "lib/turndown-plugin-confluence-to-gfm.es.js",
@@ -10,11 +10,10 @@
     "browserify": "^16.2.3",
     "rollup": "^1.32.0",
     "standard": "^10.0.3",
-    "turndown": "^7.0.0",
     "turndown-attendant": "0.0.3"
   },
   "dependencies": {
-    "@guyplusplus/turndown-plugin-gfm": "^1.0.5"
+    "@guyplusplus/turndown-plugin-gfm": "^1.0.6"
   },
   "files": [
     "lib",
