@@ -33,7 +33,7 @@ Browser:
 // For Node.js
 var TurndownService = require('turndown')
 var TurndownPluginGfm = require('@guyplusplus/turndown-plugin-gfm')
-var TurndownPluginConfluence = require('@guyplusplus/turndown-plugin-confluence-to-gfm')
+var TurndownPluginConfluence = require('turndown-plugin-confluence-to-gfm')
 
 var turndownService = new TurndownService()
 TurndownPluginGfm.gfm(turndownService)
