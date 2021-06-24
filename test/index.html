@@ -103,6 +103,33 @@ System.out.println("Hello World");
 ```</pre>
 </div>
 
+<div class="case" data-name="table header only, empty">
+  <div class="input">
+    <table data-layout="default" class="confluenceTable"><colgroup><col style="width: 680.0px;"/></colgroup><tbody><tr><th class="confluenceTh"><p /></th></tr></tbody></table>
+  </div>
+  <pre class="expected">|    |
+| --- |</pre>
+</div>
+
+<div class="case" data-name="table header and first row only, empty">
+  <div class="input">
+    <table data-layout="default" class="confluenceTable"><colgroup><col style="width: 680.0px;"/></colgroup><tbody><tr><th class="confluenceTh"><p /></th></tr><tr><td class="confluenceTd"><p /></td></tr></tbody></table>
+  </div>
+  <pre class="expected">|    |
+| --- |
+|    |</pre>
+</div>
+
+<div class="case" data-name="large table with auto-numbering">
+  <div class="input">
+    <table data-layout="default" class="confluenceTable"><colgroup><col/><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><th class="numberingColumn confluenceTh" /><th class="confluenceTh"><p><strong>l1h1</strong></p></th><th class="confluenceTh"><p><strong>h2</strong></p></th><th class="confluenceTh"><p><strong>h3</strong></p></th></tr><tr><td class="numberingColumn confluenceTd">1</td><th class="confluenceTh"><p><strong>l2</strong></p></th><td class="confluenceTd"><p>2-2</p></td><td class="confluenceTd"><p>2-3</p></td></tr><tr><td class="numberingColumn confluenceTd">2</td><th class="confluenceTh"><p><strong>l3</strong></p></th><td class="confluenceTd"><p>3-2</p></td><td class="confluenceTd"><p>3-3</p></td></tr></tbody></table>
+  </div>
+  <pre class="expected">|  |   **l1h1**   |   **h2**   |   **h3**   |
+| --- | --- | --- | --- |
+| 1 |   **l2**   |   2-2   |   2-3   |
+| 2 |   **l3**   |   3-2   |   3-3   |</pre>
+</div>
+
 <!-- /TEST CASES -->
 
 <script src="turndown-plugin-gfm-test.browser.js"></script>
