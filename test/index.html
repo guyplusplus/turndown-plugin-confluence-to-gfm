@@ -33,16 +33,30 @@
   <pre class="expected">![img with alt](logo.png)</pre>
 </div>
 
-<div class="case" data-name="emoji">
+<div class="case" data-name="standardemoji">
   <div class="input">
     <img class="emoticon emoticon-laugh" data-emoji-id="1f600" data-emoji-shortname=":grinning:" data-emoji-fallback="😀" src="images/icons/emoticons/biggrin.png" width="16" height="16" data-emoticon-name="laugh" alt="(big grin)"/>
   </div>
   <pre class="expected">:grinning:</pre>
 </div>
 
-<div class="case" data-name="emoji without data-emoji-shortname">
+<div class="case" data-name="standard emoji without data-emoji-shortname">
   <div class="input">
     <img class="emoticon emoticon-laugh" data-emoji-id="1f600" data-emoji-fallback="😀" src="images/icons/emoticons/biggrin.png" width="16" height="16" data-emoticon-name="laugh" alt="(big grin)"/>
+  </div>
+  <pre class="expected">😀</pre>
+</div>
+
+<div class="case" data-name="non gfm emoji">
+  <div class="input">
+    <img class="emoticon emoticon-blue-star" data-emoji-id="1f1ef-1f1f5" data-emoji-shortname=":flag_jp:" data-emoji-fallback="🇯🇵" src="images/icons/emoticons/72/1f1ef-1f1f5.png" width="16" height="16" data-emoticon-name="blue-star" alt="(blue star)"/>
+  </div>
+  <pre class="expected">🇯🇵</pre>
+</div>
+
+<div class="case" data-name="non gfm emoji with no fallback">
+  <div class="input">
+    <img class="emoticon emoticon-blue-star" data-emoji-id="1f1ef-1f1f5" data-emoji-shortname=":flag_jp:" src="images/icons/emoticons/72/1f1ef-1f1f5.png" width="16" height="16" data-emoticon-name="blue-star" alt="(blue star)"/>
   </div>
   <pre class="expected"></pre>
 </div>
