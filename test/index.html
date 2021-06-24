@@ -70,6 +70,39 @@
 - [ ] Action 3 not specified</pre>
 </div>
 
+<div class="case" data-name="highlighted code block - 1 line">
+  <div class="input">
+    <div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+      <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">System.out.println(&quot;Hello World&quot;);</pre>
+      </div></div>
+  </div>
+  <pre class="expected">```java
+System.out.println("Hello World");
+```</pre>
+</div>
+
+<div class="case" data-name="highlighted code block - many lines">
+  <div class="input">
+    <div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+      <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+  &quot;key1&quot;: {
+    &quot;key2&quot;: &quot;value&quot;,
+    &quot;number&quot;: 123
+  },
+  &quot;array&quot;: [1, 2, 3]
+}</pre></div></div>
+  </div>
+  <pre class="expected">```java
+{
+  "key1": {
+    "key2": "value",
+    "number": 123
+  },
+  "array": [1, 2, 3]
+}
+```</pre>
+</div>
+
 <!-- /TEST CASES -->
 
 <script src="turndown-plugin-gfm-test.browser.js"></script>
