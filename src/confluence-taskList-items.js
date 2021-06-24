@@ -8,7 +8,7 @@ export default function confluenceTaskListItems (turndownService) {
       )
     },
     replacement: function (content, node) {
-      return (node.className === 'checked' ? '- [x]' : '- [ ]') + ' ' + content + '\n\n'
+      return (node.className === 'checked' ? '- [x]' : '- [ ]') + ' ' + content + '\n'
     }
   })
 }

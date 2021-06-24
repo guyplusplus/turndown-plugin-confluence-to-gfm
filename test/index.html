@@ -61,6 +61,15 @@
   <pre class="expected"></pre>
 </div>
 
+<div class="case" data-name="task list">
+  <div class="input">
+    <ul class="inline-task-list" data-inline-tasks-content-id="123123"><li data-inline-task-id="1"><span class="placeholder-inline-tasks">Action 1 unchecked</span></li><li class="checked" data-inline-task-id="2"><span class="placeholder-inline-tasks">Action 2 checked</span></li><li data-inline-task-id="3"><span class="placeholder-inline-tasks">Action 3 not specified</span></li></ul>
+  </div>
+  <pre class="expected">- [ ] Action 1 unchecked
+- [x] Action 2 checked
+- [ ] Action 3 not specified</pre>
+</div>
+
 <!-- /TEST CASES -->
 
 <script src="turndown-plugin-gfm-test.browser.js"></script>
