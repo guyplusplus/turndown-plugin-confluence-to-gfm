@@ -5,7 +5,7 @@ A [Turndown](https://github.com/domchristie/turndown) plugin which adds GitHub F
 This small plugin converts few non-standard features of Confluence HTML content to GFM, namely:
 * Code block
 * Tasks list
-* Smileys
+* Emoji
 
 ## Test Page
 
@@ -44,16 +44,16 @@ var markdown = turndownService.turndown('<img class="emoticon emoticon-laugh" da
 turndown-plugin-confluence-to-gfm is a suite of plugins which can be applied individually. The available plugins are as follows:
 
 - `confluenceHighlightedCodeBlock`
-- `confluenceSmiley`
+- `confluenceEmoji`
 - `confluenceTaskListItems`
 - `confluenceGfm` (which applies all of the above)
 
 So for example, if you only wish to convert tables:
 
 ```js
-var confluenceSmiley = require('turndown-plugin-confluence-to-gfm').confluenceSmiley
+var confluenceEmoji = require('turndown-plugin-confluence-to-gfm').confluenceEmoji
 var turndownService = new TurndownService()
-turndownService.use(confluenceSmiley)
+turndownService.use(confluenceEmoji)
 ```
 
 ## License
