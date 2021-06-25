@@ -245,6 +245,7 @@ console.log(
     optionsForm.addEventListener('change', function () {
       turndownService = new window.TurndownService(options())
       TurndownPluginGfmService.gfm(turndownService)
+      TurndownPluginConfluenceToGfmService.confluenceGfm(turndownService)
       update()
     })
 
