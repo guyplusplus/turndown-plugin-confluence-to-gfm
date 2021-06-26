@@ -1,13 +1,14 @@
-import confluenceHighlightedCodeBlock from './confluence-highlighted-code-block'
+import {indentedConfluenceHighlightedCodeBlock, fencedConfluenceHighlightedCodeBlock} from './confluence-highlighted-code-block'
 import confluenceEmoji from './confluence-emoji'
 import confluenceTaskListItems from './confluence-taskList-items'
 
 function confluenceGfm (turndownService) {
   turndownService.use([
-    confluenceHighlightedCodeBlock,
+    indentedConfluenceHighlightedCodeBlock,
+    fencedConfluenceHighlightedCodeBlock,
     confluenceEmoji,
     confluenceTaskListItems
   ])
 }
 
-export { confluenceGfm, confluenceHighlightedCodeBlock, confluenceEmoji, confluenceTaskListItems }
+export { confluenceGfm, indentedConfluenceHighlightedCodeBlock, fencedConfluenceHighlightedCodeBlock, confluenceEmoji, confluenceTaskListItems }

@@ -3,7 +3,7 @@
 A [Turndown](https://github.com/domchristie/turndown) plugin which adds GitHub Flavored Markdown extensions for Confluence pages exported as HTML. It relies on the [turndown-plugin-gfm](https://github.com/guyplusplus/turndown-plugin-gfm) plugin.
 
 This small plugin converts few non-standard features of Confluence HTML content to GFM, namely:
-* Code block
+* Code block (indented and fenced)
 * Tasks list
 * Emoji
 
@@ -43,7 +43,7 @@ var markdown = turndownService.turndown('<img class="emoticon emoticon-laugh" da
 
 turndown-plugin-confluence-to-gfm is a suite of plugins which can be applied individually. The available plugins are as follows:
 
-- `confluenceHighlightedCodeBlock`
+- `indentedConfluenceHighlightedCodeBlock` and `fencedConfluenceHighlightedCodeBlock`
 - `confluenceEmoji`
 - `confluenceTaskListItems`
 - `confluenceGfm` (which applies all of the above)
