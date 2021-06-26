@@ -32,12 +32,12 @@ Browser:
 ```js
 // For Node.js
 var TurndownService = require('turndown')
-var TurndownPluginGfm = require('@guyplusplus/turndown-plugin-gfm')
-var TurndownPluginConfluence = require('turndown-plugin-confluence-to-gfm')
+var TurndownPluginGfmService = require('@guyplusplus/turndown-plugin-gfm')
+var TurndownPluginConfluenceToGfmService = require('turndown-plugin-confluence-to-gfm')
 
 var turndownService = new TurndownService()
-TurndownPluginGfm.gfm(turndownService)
-TurndownPluginConfluence.confluenceGfm(turndownService)
+TurndownPluginGfmService.gfm(turndownService)
+TurndownPluginConfluenceToGfmService.confluenceGfm(turndownService)
 var markdown = turndownService.turndown('<img class="emoticon emoticon-laugh" data-emoji-id="1f600" data-emoji-shortname=":grinning:" data-emoji-fallback="😀" src="images/icons/emoticons/biggrin.png" width="16" height="16" data-emoticon-name="laugh" alt="(big grin)"/>')
 ```
 
@@ -53,6 +53,7 @@ So for example, if you only wish to convert tables:
 ```js
 var confluenceEmoji = require('turndown-plugin-confluence-to-gfm').confluenceEmoji
 var turndownService = new TurndownService()
+TurndownPluginGfmService.gfm(turndownService)
 turndownService.use(confluenceEmoji)
 ```
 
