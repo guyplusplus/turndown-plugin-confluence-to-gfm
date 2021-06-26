@@ -121,13 +121,12 @@
 <div class="row">
   <div class="col">
     <label for="input">HTML</label>
-    <textarea cols="100" rows=10 id="input"><h1>Turndown Plugin Confluence to GFM Demo</h1>
-      <div id="main-content" class="wiki-content group">
+    <textarea cols="100" rows=10 id="input"><div id="main-content" class="wiki-content group">
         <h1 id="TurndownPluginConfluencetoGFMDemo">Turndown Plugin Confluence to GFM Demo</h1><p>This demonstrates <a href="https://github.com/domchristie/turndown" class="external-link" rel="nofollow">turndown</a> – an HTML to Markdown converter in JavaScript with additional support for Confluence GFM via the <a href="https://github.com/guyplusplus/turndown-plugin-confluence-to-gfm" class="external-link" rel="nofollow">turndown-plugin-confluence-to-gfm</a> plugin.</p><h2 id="Usage">Usage</h2><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: js; gutter: false; theme: Confluence" data-theme="Confluence">var turndownService = new TurndownService()
-TurndownPluginGfmService.gfm(turndownService)
-TurndownPluginConfluenceToGfmService.confluenceGfm(turndownService)
-console.log(turndownService.turndown(&#39;&lt;img class=&quot;emoticon emoticon-laugh&quot; data-emoji-id=&quot;1f600&quot; data-emoji-shortname=&quot;:grinning:&quot; data-emoji-fallback=&quot;😀&quot; src=&quot;images/icons/emoticons/biggrin.png&quot; width=&quot;16&quot; height=&quot;16&quot; data-emoticon-name=&quot;laugh&quot; alt=&quot;(big grin)&quot;/&gt;&#39;))</pre>
+  TurndownPluginGfmService.gfm(turndownService)
+  TurndownPluginConfluenceToGfmService.confluenceGfm(turndownService)
+  console.log(turndownService.turndown(&amp;#39;&amp;lt;img class=&amp;quot;emoticon emoticon-laugh&amp;quot; data-emoji-id=&amp;quot;1f600&amp;quot; data-emoji-shortname=&amp;quot;:grinning:&amp;quot; data-emoji-fallback=&amp;quot;😀&amp;quot; src=&amp;quot;images/icons/emoticons/biggrin.png&amp;quot; width=&amp;quot;16&amp;quot; height=&amp;quot;16&amp;quot; data-emoticon-name=&amp;quot;laugh&amp;quot; alt=&amp;quot;(big grin)&amp;quot;/&amp;gt;&amp;#39;))</pre>
 </div></div><p>It aims to be <a href="http://commonmark.org/" class="external-link" rel="nofollow">CommonMark</a> compliant, and includes options to style the output. These options include:</p><ul><li>code block (indented or fenced)</p></li><li><p>task list (- [ ] or - [x])</p></li><li><p>emoji (such as :smile:)</p></li></ul>
         </div></textarea>
   </div>
