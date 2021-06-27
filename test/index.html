@@ -162,6 +162,59 @@ Test of **gfm bold** and &lt;b&gt;html bold&lt;/b&gt; in source.
 ```</pre>
 </div>
 
+<div class="case" data-name="fence char in code + multilines (fenced)" data-options='{"codeBlockStyle": "fenced"}'>
+  <div class="input"><div class="codeContent panelContent pdl">
+    <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">line 1
+```
+line 3
+```
+
+line 6
+</pre>
+</div></div>
+  <pre class="expected">````java
+line 1
+```
+line 3
+```
+
+line 6
+
+````</pre>
+</div>
+
+<div class="case" data-name="fence char in code + multilines (indented)" data-options='{"codeBlockStyle": "indented"}'>
+  <div class="input"><div class="codeContent panelContent pdl">
+    <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">line 1
+```
+line 3
+```
+
+line 6
+</pre>
+</div></div>
+  <pre class="expected">    line 1
+    ```
+    line 3
+    ```
+    
+    line 6</pre>
+</div>
+
+<div class="case" data-name="empty code block (TODO to improve with empty code)" data-options='{"codeBlockStyle": "fenced"}'>
+  <div class="input"><div class="codeContent panelContent pdl">
+    <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"></pre>
+</div></div>
+  <pre class="expected"></pre>
+</div>
+
+<div class="case" data-name="empty code block (TODO to improve with empty code)" data-options='{"codeBlockStyle": "indented"}'>
+  <div class="input"><div class="codeContent panelContent pdl">
+    <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"></pre>
+</div></div>
+  <pre class="expected"></pre>
+</div>
+
 <!-- /TEST CASES -->
 
 <script src="turndown-plugin-gfm-test.browser.js"></script>
