@@ -39,12 +39,6 @@ function fencedConfluenceHighlightedCodeBlock (turndownService) {
       var language = (dataSyntaxhighlighterParams.match(highlightRegExp) || [null, ''])[1]
       var code = node.firstChild.textContent
 
-      // TODO: implement fenceInCodeRegex
-      /* return (
-        '\n\n' + options.fence + language + '\n' +
-        node.firstChild.textContent +
-        '\n' + options.fence + '\n\n'
-      ) */
       var fenceChar = options.fence.charAt(0)
       var fenceSize = 3
       var fenceInCodeRegex = new RegExp('^' + fenceChar + '{3,}', 'gm')
@@ -60,7 +54,7 @@ function fencedConfluenceHighlightedCodeBlock (turndownService) {
 
       return (
         '\n\n' + fence + language + '\n' +
-        code.replace(/\n$/, '') +
+        code +
         '\n' + fence + '\n\n'
       )
     }
