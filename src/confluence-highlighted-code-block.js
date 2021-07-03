@@ -54,7 +54,7 @@ function fencedConfluenceHighlightedCodeBlock (turndownService) {
 
       return (
         '\n\n' + fence + language + '\n' +
-        code +
+        code.replace(/\n$/, '') +
         '\n' + fence + '\n\n'
       )
     }
