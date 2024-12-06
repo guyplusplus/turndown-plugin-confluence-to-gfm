@@ -5,8 +5,11 @@ var gfmEmojis = (':bowtie: :smile: :simple_smile: :laughing: :blush: :smiley: :r
 export default function confluenceEmoji (turndownService) {
   turndownService.addRule('confluenceEmoji', {
     filter: function (node) {
+      if (node.nodeName !== 'IMG') {
+        return false;
+      }
       var classes = (node.className || '').split(' ')
-      return classes.includes('emoticon') && node.nodeName === 'IMG'
+      return classes.includes('emoticon')
     },
     replacement: function (content, node) {
       var dataEmojiShortname = node.getAttribute('data-emoji-shortname') || ''
